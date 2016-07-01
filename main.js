@@ -9,7 +9,7 @@ exports.handler = function (event, context) {
 
     github.authenticate({
         type: "oauth",
-        token: process.env.GITHUB_ACCESS_TOKEN
+        token: event.github_token
     });
 
     github.activity.getNotifications({

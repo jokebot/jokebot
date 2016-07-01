@@ -34,3 +34,6 @@ node_modules
 
 # AWS creds(!)
 .env
+
+# Triggering event (includes runtime secrets)
+trigger-jokebot.json
