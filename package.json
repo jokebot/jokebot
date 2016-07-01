@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/jokebot/jokebot#readme",
   "dependencies": {
+    "github": "^2.1.0",
     "jokes": "0.0.2"
   }
 }
