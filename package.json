@@ -3,11 +3,11 @@
   "private": true,
   "version": "1.0.0",
   "description": "A github bot, on AWS Lambda, that sends you jokes on demand",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "start": "source .env && claudia create --name jokebot --region eu-west-1 --handler main.handler",
     "ping": "source .env && claudia test-lambda --event trigger-jokebot.json",
-    "schedule": "source .env && claudia add-scheduled-event --event trigger-jokebot.json --name jokebot --rate '1 minutes'",
+    "schedule": "source .env && claudia add-scheduled-event --event trigger-jokebot.json --name jokebot --rate '1 minute'",
     "deploy": "source .env && claudia update",
     "test": "source .env && node test.js"
   },

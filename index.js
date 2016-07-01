@@ -16,8 +16,7 @@ exports.handler = function (event, context) {
     }).then((notifications) => {
         if (notifications.length > 0) {
             console.log(getJoke().text);
+            return github.activity.markNotificationThreadAsRead({ id: notifications[0].id });
         }
-
-        context.succeed(notifications);
-    }).catch(context.fail);
+    }).then(() => context.succeed()).catch(context.fail);
 }
