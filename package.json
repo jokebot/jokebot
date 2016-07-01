@@ -3,9 +3,14 @@
   "private": true,
   "version": "1.0.0",
   "description": "A github bot, on AWS Lambda, that sends you jokes on demand",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "source .env && claudia create --name jokebot --region eu-west-1 --handler main.handler",
+    "ping": "source .env && claudia test-lambda --event ping.json",
+    "schedule": "source .env && claudia add-scheduled-event --event ping.json --name jokebot --rate '1 minutes'",
+    "deploy": "source .env && claudia update",
+
+    "test": "source .env && node test.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/jokebot/jokebot/issues"
   },
-  "homepage": "https://github.com/jokebot/jokebot#readme"
+  "homepage": "https://github.com/jokebot/jokebot#readme",
+  "dependencies": {
+    "jokes": "0.0.2"
+  }
 }

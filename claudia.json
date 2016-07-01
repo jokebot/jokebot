@@ -1,0 +1,7 @@
+{
+  "lambda": {
+    "role": "jokebot-executor",
+    "name": "jokebot",
+    "region": "eu-west-1"
+  }
+}
