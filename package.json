@@ -9,7 +9,6 @@
     "ping": "source .env && claudia test-lambda --event trigger-jokebot.json",
     "schedule": "source .env && claudia add-scheduled-event --event trigger-jokebot.json --name jokebot --rate '1 minutes'",
     "deploy": "source .env && claudia update",
-
     "test": "source .env && node test.js"
   },
   "repository": {
@@ -25,5 +24,8 @@
   "dependencies": {
     "github": "^2.1.0",
     "jokes": "0.0.2"
+  },
+  "devDependencies": {
+    "claudia": "^1.4.2"
   }
 }
