@@ -19,7 +19,7 @@ exports.handler = function (event, context) {
                        notification.subject.type === 'Issue';
             }).map((notification) => {
                 var issueUrl = notification.subject.url;
-                var issueMatch = /api.github.com\/repos\/(\w+)\/(\w+)\/issues\/(\d+)/.exec(issueUrl);
+                var issueMatch = /api.github.com\/repos\/([\-\w]+)\/([\-\w]+)\/issues\/(\d+)/.exec(issueUrl);
                 if (issueMatch) {
                     var username = issueMatch[1];
                     var repo = issueMatch[2];
