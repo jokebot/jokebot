@@ -7,7 +7,7 @@
   "scripts": {
     "start": "dev-bot run-once index.js --env deploy.env",
     "test": "mocha test.js",
-    "deploy": "source .env && dev-bot aws-deploy jokebot index.js --env deploy.env"
+    "deploy": "dev-bot aws-deploy jokebot index.js --env deploy.env"
   },
   "repository": {
     "type": "git",
