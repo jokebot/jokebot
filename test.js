@@ -1,11 +1,16 @@
 'use strict';
 
 var JokeBot = require("./index.js");
-var event = require("./trigger-jokebot.json");
+var sinon = require("sinon");
 
-var contextStub = {
-    succeed: (x) => console.log("Successful result:", x),
-    fail: (x) => console.error("Failing result:", x),
+it("sends jokes", () => {
+    var responseStub = sinon.stub();
+
+    JokeBot.onMention(null, responseStub);
+
+    expect(responseStub.callCount).to.equal(1);
+
+    var joke = responseStub.args[0][0];
+    expect(joke).to.be.a.string();
+    expect(joke).to.have.length.above(0);
 }
-
-JokeBot.handler(event, contextStub);

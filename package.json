@@ -5,11 +5,9 @@
   "description": "A github bot, on AWS Lambda, that sends you jokes on demand",
   "main": "index.js",
   "scripts": {
-    "start": "source .env && claudia create --name jokebot --region eu-west-1 --handler main.handler",
-    "ping": "source .env && claudia test-lambda --event trigger-jokebot.json",
-    "schedule": "source .env && claudia add-scheduled-event --event trigger-jokebot.json --name jokebot --rate '1 minute'",
-    "deploy": "source .env && claudia update",
-    "test": "source .env && node test.js"
+    "start": "dev-bot run-once index.js --env deploy.env",
+    "test": "mocha test.js",
+    "deploy": "source .env && dev-bot aws-deploy jokebot index.js --env deploy.env"
   },
   "repository": {
     "type": "git",
@@ -22,10 +20,10 @@
   },
   "homepage": "https://github.com/jokebot/jokebot#readme",
   "dependencies": {
-    "github": "^2.1.0",
+    "dev-bot": "^0.2.0",
     "jokes": "0.0.2"
   },
   "devDependencies": {
-    "claudia": "^1.4.2"
+    "dev-bot-tool": "^0.2.0-rc2"
   }
 }
