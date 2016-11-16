@@ -8,7 +8,7 @@
     "start": "dev-bot run-once --env bot.env",
     "test": "mocha test.js",
     "once": "dev-bot run-once --env bot.env",
-    "deploy": "dev-bot aws-deploy jokebot --env bot.env"
+    "deploy": "source .env && dev-bot aws-deploy jokebot --env bot.env"
   },
   "repository": {
     "type": "git",
