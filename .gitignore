@@ -36,7 +36,7 @@ node_modules
 .env
 
 # Runtime creds(!)
-deploy.env
+bot.env
 
 # Triggering event (includes runtime secrets)
 trigger-jokebot.json

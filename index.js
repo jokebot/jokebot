@@ -8,6 +8,6 @@ devBot.connectGithub({
     token: process.env.GITHUB_TOKEN
 });
 
-exports.onMention = function (mention, respondCallback) {
+exports.onMention = function (mention, context, respondCallback) {
     respondCallback(getJoke().text);
 }

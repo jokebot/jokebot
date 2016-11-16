@@ -5,9 +5,10 @@
   "description": "A github bot, on AWS Lambda, that sends you jokes on demand",
   "main": "index.js",
   "scripts": {
-    "start": "dev-bot run-once index.js --env deploy.env",
+    "start": "dev-bot run-once --env bot.env",
     "test": "mocha test.js",
-    "deploy": "dev-bot aws-deploy jokebot index.js --env deploy.env"
+    "once": "dev-bot run-once --env bot.env",
+    "deploy": "dev-bot aws-deploy jokebot --env bot.env"
   },
   "repository": {
     "type": "git",
@@ -20,10 +21,10 @@
   },
   "homepage": "https://github.com/jokebot/jokebot#readme",
   "dependencies": {
-    "dev-bot": "^0.2.0",
+    "dev-bot": "^0.3.0",
     "jokes": "0.0.2"
   },
   "devDependencies": {
-    "dev-bot-tool": "^0.2.0-rc2"
+    "dev-bot-tool": "^0.2.2"
   }
 }
