@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/jokebot/jokebot#readme",
   "dependencies": {
-    "dev-bot": "^0.3.1",
+    "dev-bot": "^0.3.2",
     "jokes": "0.0.2"
   },
   "devDependencies": {
