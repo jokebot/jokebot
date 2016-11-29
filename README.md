@@ -13,7 +13,7 @@ You can give this a go yourself if you like:
 ### Try this locally
 * Check out this project
 * `npm install`
-* Copy `deploy.env.TEMPLATE` to `deploy.env`, and add the Github token for your user your bot should use
+* Copy `bot.env.TEMPLATE` to `bot.env`, and add the Github token for your user your bot should use
 * @mention your bot on Github, and run `npm run start` locally to do a single poll for mentions. Your bot should reply! (hilariously)
 
 ### Deploy this to AWS
